@@ -1,0 +1,53 @@
+$primary-bkgd-color: lightgrey;
+$primary-header-font: 'Monoton', cursive;
+$primary-txt-font: 'Abel', sans-serif;
+
+
+body {
+    font-family: $primary-txt-font;
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-family: $primary-header-font;
+        background-color: $primary-bkgd-color;
+        width: 75%;
+        margin: 0 auto;
+        padding: 20px;
+        font-weight: normal;
+    }
+
+    section ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 75%;
+        margin: 20px auto;
+
+        li {
+            background-color: $primary-bkgd-color;
+            list-style: none;
+            margin: 10px;
+            padding: 15px;
+
+                p:nth-child(-n+2){
+                    display: inline-block;
+                    margin-bottom: 0px;
+                }
+                
+                button {
+                    padding: 10px;
+                }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+ 
