@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
         <script src="js/parking-lot.js"></script>
+        <script id="car-info-template" type="x-mustache-template">
+            <p>{{ carMake }}</p>
+            <p>{{ carModel }}</p>
+            <p>{{ carSize }}</p>
+            <p>{{ carMoney }}</p>
+        </script>
     </head>
     <body>
         <h1>Prestige Worldwide Parking Lot</h1>
