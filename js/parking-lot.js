@@ -106,14 +106,29 @@ function showCars(car) {
             // when clicked, send the current car
                 for (let i =0; i < lots.length; i++) {
                     let lotBtn = document.createElement('button');
-                    lotBtn.textContent = "Add Lot" + lots[i].id;
+                    lotBtn.textContent = "Add Lot " + lots[i].id;
                     newCar.appendChild(lotBtn);
                     lotBtn.addEventListener('click', function() {
-                    console.log();
-            });
-                }
+                        updateCarLot(car, lots[i]);
+                    });
+                }              
+            
+}
 
-            
-                
-            
+function updateCarLot(car, lot) {
+    let params = {
+        lotId:,
+        make:,
+        model:,
+        money:,
+        size: car.size
+    };
+
+    let request = new XMLHttpRequest();
+    request.open('POST', 'http://#/update');
+    request.addEventListener('load', function() {
+        console.log('look! it updated!');
+    });
+
+    request.send(JSON.stringify(updateCarLot));
 }
