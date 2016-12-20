@@ -4,19 +4,19 @@ let cars = [
         make: 'Ford',
         model: 'Mustang',
         size: 5,
-        money: 30,
+        money: '$' + 30,
     },
     {
         make: 'Subaru',
         model: 'Forester',
         size: 7,
-        money: 70,
+        money: '$' + 70,
     },
     {
         make: 'Smart',
         model: 'Passion Cabrio',
         size: 1,
-        money: 15,
+        money: '$' + 15,
     }
 ]
 
@@ -25,17 +25,17 @@ let lots = [ //once you get data from backend-delete this array and set it to re
     {
         id: 0,
         capacity: 15,
-        rate: 5,
+        rate: '$' + 5,
     },
     {
         id: 1,
         capacity: 15,
-        rate: 5,
+        rate: '$' + 5,
     },
     {
         id: 2,
         capacity: 15,
-        rate: 5,
+        rate: '$' + 5,
     }
 ]
 
