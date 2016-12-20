@@ -117,10 +117,10 @@ function showCars(car) {
 
 function updateCarLot(car, lot) {
     let params = {
-        lotId:,
-        make:,
-        model:,
-        money:,
+        id: lot.id,
+        make: car.make,
+        model: car.model,
+        money: car.money,
         size: car.size
     };
 
@@ -130,5 +130,5 @@ function updateCarLot(car, lot) {
         console.log('look! it updated!');
     });
 
-    request.send(JSON.stringify(updateCarLot));
+    request.send(JSON.stringify(params));
 }
