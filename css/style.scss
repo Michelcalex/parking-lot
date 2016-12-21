@@ -1,4 +1,5 @@
 $primary-bkgd-color: lightgrey;
+$secondary-bkgd-color: white;
 $primary-header-font: 'Monoton', cursive;
 $primary-txt-font: 'Abel', sans-serif;
 
@@ -17,7 +18,17 @@ body {
         font-weight: normal;
     }
 
-    section ul {
+    #lot-info {
+        display: flex;
+        width: 75%;
+        background-color: $primary-bkgd-color;
+
+            li {
+                background-color: $secondary-bkgd-color;
+            }
+    }
+
+    #car-info {
         display: flex;
         flex-direction: column;
         padding: 0;

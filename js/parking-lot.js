@@ -21,23 +21,23 @@ let cars = [
 ]
 
 
-let lots = [ //once you get data from backend-delete this array and set it to response****
-    {
-        id: 0,
-        capacity: 15,
-        rate: '$' + 5,
-    },
-    {
-        id: 1,
-        capacity: 15,
-        rate: '$' + 5,
-    },
-    {
-        id: 2,
-        capacity: 15,
-        rate: '$' + 5,
-    }
-]
+// let lots = [ //once you get data from backend-delete this array and set it to response****
+//     {
+//         id: 0,
+//         capacity: 15,
+//         rate: '$' + 5,
+//     },
+//     {
+//         id: 1,
+//         capacity: 15,
+//         rate: '$' + 5,
+//     },
+//     {
+//         id: 2,
+//         capacity: 15,
+//         rate: '$' + 5,
+//     }
+// ]
 
 
 //When the page loads, do this.....
@@ -53,31 +53,31 @@ window.addEventListener('load', function() {
 
 //function getCarLots 
 function getCarLots() {
-//     let request = new XMLHttpRequest();
-//     request.open('GET', 'http://#/lots');
-//     request.addEventListener('load', function() {
-//         console.log('Weve got cars weeeeeeee');
-//         let response = JSON.parse(request.responseText);
-//         console.log(response);
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://warm-waters-57933.herokuapp.com/parking-lot');
+    request.addEventListener('load', function() {
+        console.log('Weve got cars weeeeeeee');
+        let response = JSON.parse(request.responseText);
+        console.log(response);
 //         //after you got the lots, use mustache to build out the lot info to display to users******
         
-        let lotList = document.querySelector('#lot-info');
-        for(let i = 0; i <lots.length; i++) {
-            let lot = document.createElement('li');
+        // let lotList = document.querySelector('#lot-info');
+        // for(let i = 0; i <lots.length; i++) {
+        //     let lot = document.createElement('li');
 
-            lot.innerHTML = Mustache.render (
-                document.querySelector('#car-lot-template').innerHTML, 
-                { id: lots[i].id,
-                  lotCapacity: lots[i].capacity,
-                  lotCost: lots[i].rate
-                }
-            )
+        //     lot.innerHTML = Mustache.render (
+        //         document.querySelector('#car-lot-template').innerHTML, 
+        //         { id: lots[i].id,
+        //           lotCapacity: lots[i].capacity,
+        //           lotCost: lots[i].rate
+        //         }
+        //     )
 
-            lotList.appendChild(lot);
-        }
-//     });
+        //     lotList.appendChild(lot);
+        // }
+    });
 
-//     request.send();
+    request.send();
 }
 
 
