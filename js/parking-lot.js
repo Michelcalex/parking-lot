@@ -59,6 +59,27 @@ function getCarLots() {
         console.log('Weve got cars weeeeeeee');
         let response = JSON.parse(request.responseText);
         console.log(response);
+
+        let lotList = document.querySelector('#lot-info');
+
+        for (let i = 0; i < response.length; i++) {
+            let lot = document.createElement('li');
+
+            // let lotId = response[i].id;
+            // console.log(lotId);
+
+            lot.innerHTML = Mustache.render (
+                document.querySelector('#car-lot-template').innerHTML, 
+                { id: response[i].id,
+                  lotCapacity: response[i].capacity,
+                  lotCost: response[i].rate
+                }
+            )
+
+            lotList.appendChild(lot)
+
+
+        }
 //         //after you got the lots, use mustache to build out the lot info to display to users******
         
         // let lotList = document.querySelector('#lot-info');
