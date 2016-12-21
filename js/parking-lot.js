@@ -53,13 +53,13 @@ window.addEventListener('load', function() {
 
 //function getCarLots 
 function getCarLots() {
-    let request = new XMLHttpRequest();
-    request.open('GET', 'http://#/lots');
-    request.addEventListener('load', function() {
-        console.log('Weve got cars weeeeeeee');
-        let response = JSON.parse(request.responseText);
-        console.log(response);
-        //after you got the lots, use mustache to build out the lot info to display to users******
+//     let request = new XMLHttpRequest();
+//     request.open('GET', 'http://#/lots');
+//     request.addEventListener('load', function() {
+//         console.log('Weve got cars weeeeeeee');
+//         let response = JSON.parse(request.responseText);
+//         console.log(response);
+//         //after you got the lots, use mustache to build out the lot info to display to users******
         
         let lotList = document.querySelector('#lot-info');
         for(let i = 0; i <lots.length; i++) {
@@ -72,10 +72,12 @@ function getCarLots() {
                   lotCost: lots[i].rate
                 }
             )
-        }
-    });
 
-    request.send();
+            lotList.appendChild(lot);
+        }
+//     });
+
+//     request.send();
 }
 
 
@@ -94,9 +96,9 @@ function showCars() {
               carSize: cars[i].size, 
               carMoney: cars[i].money, 
               lots: [
-                  {id: 1}, 
-                  {id: 2},
-                  {id: 3 }
+                  {id: 0}, 
+                  {id: 1},
+                  {id: 2}
               ]}
         );     
         
