@@ -12,9 +12,15 @@ body {
   body #lot-info {
     display: flex;
     width: 75%;
-    background-color: lightgrey; }
+    background-color: lightgrey;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-around; }
     body #lot-info li {
-      background-color: white; }
+      background-color: white;
+      list-style: none;
+      margin: 20px;
+      padding: 10px 60px; }
   body #car-info {
     display: flex;
     flex-direction: column;

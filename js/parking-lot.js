@@ -46,8 +46,6 @@ window.addEventListener('load', function() {
 
     showCars(); //run function showCars()
 
-
-
 });
 
 
@@ -80,7 +78,7 @@ function getCarLots() {
 
 
         }
-//         //after you got the lots, use mustache to build out the lot info to display to users******
+         //after you got the lots, use mustache to build out the lot info to display to users******
         
         // let lotList = document.querySelector('#lot-info');
         // for(let i = 0; i <lots.length; i++) {
@@ -117,16 +115,59 @@ function showCars() {
               carSize: cars[i].size, 
               carMoney: cars[i].money, 
               lots: [
-                  {id: 0}, 
+                  {id: 0}, //need to add event listener to this to run updateCars
                   {id: 1},
-                  {id: 2}
+                  {id: 2},
               ]}
-        );     
+        ); 
+
+        let lot0Button = newCar.querySelector('#lot-0');
+        lot0Button.addEventListener('click', function () {
+            // updateCars has two parameters
+            updateCars(0, cars[i]);
+        });
+
+        let lot1Button = newCar.querySelector('#lot-1');
+        lot1Button.addEventListener('click', function () {
+            updateCars(1, cars[i]);
+        });
+
+        let lot2Button = newCar.querySelector('#lot-2');
+        lot1Button.addEventListener('click', function () {
+            updateCars(2, cars[i]);
+        });
+
+        // TODO: add third
+
+        // POST: lot id, the car
         
         carList.appendChild(newCar);  
     }         
 };
 
+
+
+
+function updateCars(lotId, car) {
+
+    let newCarParked = {
+        lotId: lotId,
+        make: car.make,
+        model: car.model,
+        size: car.size,
+        rate: car.rate,
+    }
+
+
+    let request = new XMLHttpRequest();
+    request.open('POST', 'https://warm-waters-57933.herokuapp.com/update');
+    request.addEventListener('load', function () {
+        console.log ("it worked!");
+    });
+
+    request.send(JSON.stringify(newCarParked));
+
+}
 
 
 

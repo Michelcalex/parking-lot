@@ -9,14 +9,15 @@
             <p>Capacity: {{lotCapacity}}</p>
         </script>
         <script id="car-info-template" type="x-mustache-template">
-            <p>{{ carMake }}</p>
+            <p><i class="fa fa-car" aria-hidden="true"></i> {{ carMake }}</p>
             <p>{{ carModel }}</p>
             <p>Size: {{ carSize }}</p>
             <p>Money: {{ carMoney }}</p>
             {{#lots}} 
-                <button>Add Lot {{id}}</button>
+                <button id="lot-{{id}}">Add Lot {{id}}</button>
             {{/lots}}
         </script>
+        <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Monoton|Abel" rel="stylesheet">
     </head>
