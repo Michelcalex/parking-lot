@@ -32,12 +32,22 @@ body {
 
                 p:nth-child(-n+2){
                     display: inline-block;
-                    margin-bottom: 0px;
+                    margin: 0px;
                     font-weight: bold;
                 }
                 
                 button {
                     padding: 10px;
+                    cursor: pointer;
+                    border-width: 0px;
+                    background-color: white;
+                    margin-right: 10px;
+                }
+
+                button:hover {
+                    background-color: darkgray;
+                    border-width: 0px;
+                    border: 2px;
                 }
         }
     }

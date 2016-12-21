@@ -22,9 +22,17 @@ body {
       padding: 15px; }
       body section ul li p:nth-child(-n+2) {
         display: inline-block;
-        margin-bottom: 0px;
+        margin: 0px;
         font-weight: bold; }
       body section ul li button {
-        padding: 10px; }
+        padding: 10px;
+        cursor: pointer;
+        border-width: 0px;
+        background-color: white;
+        margin-right: 10px; }
+      body section ul li button:hover {
+        background-color: darkgray;
+        border-width: 0px;
+        border: 2px; }
 
 /*# sourceMappingURL=style.css.map */

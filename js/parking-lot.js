@@ -42,7 +42,7 @@ let lots = [ //once you get data from backend-delete this array and set it to re
 
 //When the page loads, do this.....
 window.addEventListener('load', function() {
-    //getCarLots(); // run function getCarLots()
+    getCarLots(); // run function getCarLots()
 
     showCars(); //run function showCars()
 
@@ -52,24 +52,37 @@ window.addEventListener('load', function() {
 
 
 //function getCarLots 
-// function getCarLots() {
-//     let request = new XMLHttpRequest();
-//     request.open('GET', 'http://#/lots');
-//     request.addEventListener('load', function() {
-//         console.log('Weve got cars weeeeeeee');
-//         let response = JSON.parse(request.responseText);
-//         console.log(response);
-//         //after you got the lots, use mustache to build out the lot info to display to users******
-//     });
+function getCarLots() {
+    let request = new XMLHttpRequest();
+    request.open('GET', 'http://#/lots');
+    request.addEventListener('load', function() {
+        console.log('Weve got cars weeeeeeee');
+        let response = JSON.parse(request.responseText);
+        console.log(response);
+        //after you got the lots, use mustache to build out the lot info to display to users******
+        
+        let lotList = document.querySelector('#lot-info');
+        for(let i = 0; i <lots.length; i++) {
+            let lot = document.createElement('li');
 
-//     request.send();
-// }
+            lot.innerHTML = Mustache.render (
+                document.querySelector('#car-lot-template').innerHTML, 
+                { id: lots[i].id,
+                  lotCapacity: lots[i].capacity,
+                  lotCost: lots[i].rate
+                }
+            )
+        }
+    });
+
+    request.send();
+}
 
 
 //function showCars
 function showCars() {
 
-    let carList = document.querySelector('ul');
+    let carList = document.querySelector('#car-info');
 
     for(let i = 0; i < cars.length; i++) { //display the types of cars when the page loads 
         let newCar = document.createElement('li');
