@@ -70,7 +70,7 @@ function getCarLots() {
                 document.querySelector('#car-lot-template').innerHTML, 
                 { id: response[i].id,
                   lotCapacity: response[i].capacity,
-                  lotCost: response[i].rate
+                  lotCost: response[i].cost
                 }
             )
 
@@ -162,11 +162,10 @@ function updateCars(lotId, car) {
     let request = new XMLHttpRequest();
     request.open('POST', 'https://warm-waters-57933.herokuapp.com/update');
     // request.addEventListener('load', function () {
-    //     console.log ("it worked!");
+    //     window.setInterval(getCarLots, 1000);
     // });
 
     request.send(JSON.stringify(newCarParked));
-
 }
 
 
