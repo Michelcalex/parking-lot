@@ -24,37 +24,39 @@ body {
         color: $primary-txt-color;
     }
 
-    #lot-info {
+    ul {
         display: flex;
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    #lot-info {
         width: 50%;
         background-color: $tertiary-bkgd-color;    
         margin-right: auto;
         margin-left: auto;
         justify-content: space-around;
-        padding: 0;
 
             li {
                 background-color: $secondary-bkgd-color;
-                list-style: none;
+                // list-style: none;
                 margin: 20px;
                 padding: 10px 60px;
-
             }
     }
 
     #car-info {
-        display: flex;
-        padding: 0;
         justify-content: center;
 
         li {
             background-color: $primary-bkgd-color;
-            list-style: none;
             margin: 10px;
             padding: 15px;
             width: 20%;
             text-align: center;
-
 
                 p:nth-child(-n+2){
                     display: inline-block;
