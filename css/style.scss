@@ -1,7 +1,12 @@
 $primary-bkgd-color: lightgrey;
-$secondary-bkgd-color: white;
+$secondary-bkgd-color: #CBE9E2;
+$tertiary-bkgd-color: #487F98;
+$primary-txt-color: #487F98;
+$secondary-txt-color: #AEB2B5;
+$header-txt-color: #68ABC4;
 $primary-header-font: 'Monoton', cursive;
 $primary-txt-font: 'Abel', sans-serif;
+
 
 
 body {
@@ -16,15 +21,17 @@ body {
         margin: 0 auto;
         padding: 20px;
         font-weight: normal;
+        color: $primary-txt-color;
     }
 
     #lot-info {
         display: flex;
-        width: 75%;
-        background-color: $primary-bkgd-color;    
+        width: 50%;
+        background-color: $tertiary-bkgd-color;    
         margin-right: auto;
         margin-left: auto;
         justify-content: space-around;
+        padding: 0;
 
             li {
                 background-color: $secondary-bkgd-color;
@@ -37,25 +44,23 @@ body {
 
     #car-info {
         display: flex;
-        flex-direction: column;
         padding: 0;
-        width: 75%;
-        margin: 20px auto;
+        justify-content: center;
 
         li {
             background-color: $primary-bkgd-color;
             list-style: none;
             margin: 10px;
             padding: 15px;
+            width: 20%;
+            text-align: center;
 
-                // p:nth-child(1){
-                    
-                // }
 
                 p:nth-child(-n+2){
                     display: inline-block;
                     margin: 0px;
                     font-weight: bold;
+                    color: $primary-txt-color;
                 }
                 
                 button {
@@ -67,7 +72,7 @@ body {
                 }
 
                 button:hover {
-                    background-color: darkgray;
+                    background-color: $secondary-bkgd-color;
                     border-width: 0px;
                     border: 2px;
                 }
