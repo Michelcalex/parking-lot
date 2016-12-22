@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Abel" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon-car.ico" type="image/x-icon">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
         <script src="js/parking-lot.js"></script>
         <script id="car-lot-template" type ="x-mustache-template">
             <h3>Lot: {{id}}</h3>
@@ -16,10 +20,9 @@
             {{#lots}} 
                 <button id="lot-{{id}}">Add Lot {{id}}</button>
             {{/lots}}
-        </script>
-        <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Monoton|Abel" rel="stylesheet">
+        </script> 
+        <meta charset="UTF-8">
+        <title>Prestige Worldwide Parking</title>
     </head>
     <body>
         <header>

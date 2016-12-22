@@ -3,20 +3,20 @@ let cars = [
     {
         make: 'Ford',
         model: 'Mustang',
-        size: 5,
-        money: '$' + 30,
+        size: 4,
+        money: 30,
     },
     {
         make: 'Subaru',
         model: 'Forester',
         size: 7,
-        money: '$' + 70,
+        money: 70,
     },
     {
         make: 'Smart',
         model: 'Passion Cabrio',
         size: 1,
-        money: '$' + 15,
+        money: 15,
     }
 ]
 
@@ -121,21 +121,21 @@ function showCars() {
               ]}
         ); 
 
-        let lot0Button = newCar.querySelector('#lot-0');
-        lot0Button.addEventListener('click', function () {
-            // updateCars has two parameters
-            updateCars(0, cars[i]);
-        });
+            let lot0Button = newCar.querySelector('#lot-0');
+            lot0Button.addEventListener('click', function () {
+                // updateCars has two parameters
+                updateCars(0, cars[i]);
+            });
 
-        let lot1Button = newCar.querySelector('#lot-1');
-        lot1Button.addEventListener('click', function () {
-            updateCars(1, cars[i]);
-        });
+            let lot1Button = newCar.querySelector('#lot-1');
+            lot1Button.addEventListener('click', function () {
+                updateCars(1, cars[i]);
+            });
 
-        let lot2Button = newCar.querySelector('#lot-2');
-        lot1Button.addEventListener('click', function () {
-            updateCars(2, cars[i]);
-        });
+            let lot2Button = newCar.querySelector('#lot-2');
+            lot1Button.addEventListener('click', function () {
+                updateCars(2, cars[i]);
+            });
 
         // TODO: add third
 
@@ -151,19 +151,19 @@ function showCars() {
 function updateCars(lotId, car) {
 
     let newCarParked = {
-        lotId: lotId,
+        id: lotId,
         make: car.make,
         model: car.model,
         size: car.size,
-        rate: car.rate,
+        rate: car.money,
     }
 
 
     let request = new XMLHttpRequest();
     request.open('POST', 'https://warm-waters-57933.herokuapp.com/update');
-    request.addEventListener('load', function () {
-        console.log ("it worked!");
-    });
+    // request.addEventListener('load', function () {
+    //     console.log ("it worked!");
+    // });
 
     request.send(JSON.stringify(newCarParked));
 
