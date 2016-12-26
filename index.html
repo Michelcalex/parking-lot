@@ -8,9 +8,13 @@
         <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
         <script src="js/parking-lot.js"></script>
         <script id="car-lot-template" type ="x-mustache-template">
-            <h3>Lot: {{id}}</h3>
-            <p>Cost: {{lotCost}}</p>
+            <h3>Lot {{id}}</h3>
+            <p>Cost: ${{lotCost}}</p>
             <p>Capacity: {{lotCapacity}}</p>
+            <p>Cars parked:</p>
+            {{#carsParked}}
+                <p>{{make}} {{model}}</p>
+            {{/carsParked}}
         </script>
         <script id="car-info-template" type="x-mustache-template">
             <p><i class="fa fa-car" aria-hidden="true"></i> {{ carMake }}</p>
